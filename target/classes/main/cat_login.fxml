@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rianascorp.main.LoginController">
+   <children>
+      <VBox layoutX="9.0" layoutY="13.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <HBox>
+               <children>
+                  <HBox alignment="CENTER" HBox.hgrow="SOMETIMES">
+                     <children>
+                        <ImageView fitHeight="46.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../cat.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <GridPane vgap="5.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="89.0" minWidth="10.0" prefWidth="89.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="283.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label text="Nom utilisateur" />
+                  <TextField fx:id="userNameTextBox" prefHeight="26.0" prefWidth="262.0" GridPane.columnIndex="1" />
+                  <Label text="Mot de passe" GridPane.rowIndex="1" />
+                  <PasswordField fx:id="passWordTextBox" prefHeight="26.0" prefWidth="262.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="loginErrorLabel" prefHeight="17.0" prefWidth="278.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <VBox alignment="TOP_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <children>
+                        <Hyperlink fx:id="serverConnectionParameterLink" onAction="#serverConnectionParameterLinkAction" text="Paramètres de connexion">
+                           <graphic>
+                              <FontIcon fx:id="gearFontIcon" />
+                           </graphic>
+                        </Hyperlink>
+                     </children>
+                  </VBox>
+               </children>
+            </GridPane>
+            <HBox alignment="CENTER" spacing="25.0">
+               <children>
+                  <Button fx:id="CloseButton" mnemonicParsing="false" onAction="#CloseButtonAction" prefHeight="26.0" prefWidth="71.0" text="Fermer" />
+                  <Button fx:id="OkButton" mnemonicParsing="false" onAction="#OKButtonAction" prefHeight="26.0" prefWidth="71.0" text="OK" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

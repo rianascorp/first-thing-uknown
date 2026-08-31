@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="319.0" prefWidth="315.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rianascorp.main.ServerConnectionController">
+   <children>
+      <VBox layoutX="104.0" layoutY="14.0" prefHeight="187.0" prefWidth="293.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <HBox alignment="CENTER" VBox.vgrow="NEVER">
+               <children>
+                  <Label text="PAREMETRES DE CONNEXION" />
+               </children>
+            </HBox>
+            <VBox prefHeight="236.0" prefWidth="293.0" spacing="10.0">
+               <children>
+                  <Label text="Localisation serveur:" />
+                  <HBox alignment="CENTER">
+                     <children>
+                        <HBox spacing="25.0">
+                           <children>
+                              <RadioButton fx:id="serverLocationRadioButton1" mnemonicParsing="false" text="Local" />
+                              <RadioButton fx:id="serverLocationRadioButton2" mnemonicParsing="false" text="Distant" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <Label text="Addresse IP:" />
+                  <HBox spacing="2.0">
+                     <children>
+                        <TextField fx:id="ipAdressTextField" HBox.hgrow="ALWAYS" />
+                        <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#saveButtonAction" text="Button">
+                           <graphic>
+                              <FontIcon fx:id="saveFontIcon" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox spacing="2.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <ListView fx:id="ipAdressListView" prefHeight="119.0" prefWidth="264.0" />
+                        <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#removeButtonAction" text="Button">
+                           <graphic>
+                              <FontIcon fx:id="minusFontIcon" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" spacing="25.0" VBox.vgrow="NEVER">
+               <children>
+                  <Button fx:id="CloseButton" mnemonicParsing="false" onAction="#CloseButtonAction" text="Fermer" />
+                  <Button fx:id="SaveButton" mnemonicParsing="false" onAction="#SaveButtonAction" prefWidth="56.0" text="OK" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
