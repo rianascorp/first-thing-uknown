@@ -7,11 +7,9 @@ on:
   workflow_dispatch:
 
 env:
-  # ========== CHANGE THESE VALUES ==========
   APP_NAME: SimpleRun
   MAIN_CLASS: com.rianascorp.main.Main
   JAVA_VERSION: '17'
-  # =========================================
 
 jobs:
   build:
@@ -42,6 +40,24 @@ jobs:
           distribution: temurin
           cache: maven
 
+      - name: Set up Maven settings for GitHub Packages
+        run: |
+          mkdir -p ~/.m2
+          cat > ~/.m2/settings.xml << 'EOF'
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                    http://maven.apache.org/xsd/settings-1.0.0.xsd">
+              <servers>
+                  <server>
+                      <id>github</id>
+                      <username>${env.GITHUB_ACTOR}</username>
+                      <password>${env.GITHUB_TOKEN}</password>
+                  </server>
+              </servers>
+          </settings>
+          EOF
+
       - name: Build with Maven
         run: mvn -B clean package -DskipTests
 
@@ -57,7 +73,6 @@ jobs:
         shell: bash
         run: |
           mkdir -p dist
-
           if [ "${{ matrix.platform }}" = "windows" ]; then
             jpackage \
               --type exe \
@@ -113,9 +128,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           path: artifacts
-
-      - name: Display structure
-        run: find artifacts -type f
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
