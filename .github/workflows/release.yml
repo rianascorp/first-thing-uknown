@@ -41,6 +41,7 @@ jobs:
           cache: maven
 
       - name: Set up Maven settings for GitHub Packages
+        shell: bash
         run: |
           mkdir -p ~/.m2
           cat > ~/.m2/settings.xml << 'EOF'
