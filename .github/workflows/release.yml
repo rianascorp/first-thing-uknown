@@ -56,6 +56,12 @@ jobs:
                       <password>${env.PACKAGES_TOKEN}</password>
                   </server>
               </servers>
+              <repositories>
+                  <repository>
+                      <id>github</id>
+                      <url>https://maven.pkg.github.com/rianascorp/RianaLibraries</url>
+                  </repository>
+              </repositories>
           </settings>
           EOF
         env:
