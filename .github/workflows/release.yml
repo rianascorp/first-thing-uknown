@@ -41,6 +41,7 @@ jobs:
           cache: maven
 
       - name: Test GitHub Packages access
+        shell: bash
         run: |
           echo "Testing access to RianaLibraries..."
           curl -I \
