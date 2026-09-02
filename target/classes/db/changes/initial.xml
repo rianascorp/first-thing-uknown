@@ -1,0 +1,52 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="macbookpro (generated)" id="1788160216993-1">
+        <createTable tableName="cats">
+            <column name="dob" type="date"/>
+            <column name="furr_id" type="BIGINT"/>
+            <column name="gender_id" type="BIGINT"/>
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="cats_pkey"/>
+            </column>
+            <column name="race_id" type="BIGINT"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="photo" type="BYTEA"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="macbookpro (generated)" id="1788160216993-2">
+        <createTable tableName="furr">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="furr_pkey"/>
+            </column>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="macbookpro (generated)" id="1788160216993-3">
+        <createTable tableName="gender">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="gender_pkey"/>
+            </column>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="macbookpro (generated)" id="1788160216993-4">
+        <createTable tableName="race">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="race_pkey"/>
+            </column>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="macbookpro (generated)" id="1788160216993-5">
+        <addForeignKeyConstraint baseColumnNames="gender_id" baseTableName="cats" constraintName="fk5u4qemhomw9w30mtd8am8n1wb" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="gender" referencedTableSchemaName="cats" validate="true"/>
+    </changeSet>
+    <changeSet author="macbookpro (generated)" id="1788160216993-6">
+        <addForeignKeyConstraint baseColumnNames="race_id" baseTableName="cats" constraintName="fkgvtf102ubooyjtu36hs4odp67" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="race" referencedTableSchemaName="cats" validate="true"/>
+    </changeSet>
+    <changeSet author="macbookpro (generated)" id="1788160216993-7">
+        <addForeignKeyConstraint baseColumnNames="furr_id" baseTableName="cats" constraintName="fkseu0le1qxkwes59vtol7gk9dr" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="furr" referencedTableSchemaName="cats" validate="true"/>
+    </changeSet>
+</databaseChangeLog>

@@ -17,6 +17,13 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
+  <repositories>
+    <repository>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/rianascorp/RianaLibraries</url>
+    </repository>
+  </repositories>
+
   <dependencies>
     <!-- OpenJFX -->
     <dependency>
@@ -32,9 +39,9 @@
 
     <!-- RianaLibraries (exclude conflicts) -->
     <dependency>
-      <groupId>org.rianaLibraries</groupId>
-      <artifactId>RianaLibraries</artifactId>
-      <version>1.0-SNAPSHOT</version>
+      <groupId>org.rianalibraries</groupId>
+      <artifactId>rianalibraries</artifactId>
+      <version>1.0.1</version>
       <exclusions>
         <exclusion>
           <groupId>org.hibernate</groupId>
@@ -115,6 +122,8 @@
       <version>2.0.9</version>
     </dependency>
   </dependencies>
+
+
 
   <build>
     <plugins>

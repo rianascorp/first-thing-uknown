@@ -7,7 +7,7 @@ module com.simplerun {
     requires jakarta.persistence;
     requires org.hibernate.orm.core;
     requires validatorfx;
-    requires RianaLibraries;
+    requires org.rianalibraries;
     requires java.naming;
     requires java.desktop;
     requires org.kordamp.bootstrapfx.core;
