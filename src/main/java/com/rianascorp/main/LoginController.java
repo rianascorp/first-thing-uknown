@@ -1,5 +1,6 @@
 package com.rianascorp.main;
 
+import com.rianascorp.utils.ConfigManager;
 import com.rianascorp.utils.Shower;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -131,6 +132,9 @@ public class LoginController {
 
     public void initializeo(){
         serverConnection=new ServerIpAddress();
+        String savedIp = ConfigManager.getServerIp();
+        serverConnection.setIp(savedIp);
+
         shower =new Shower();
     }
 
@@ -143,6 +147,7 @@ public class LoginController {
 
 
     public void OKButtonAction() {
+        ConfigManager.setServerIp(serverConnection.getIp());
         Validator validator = new Validator();
         validation(validator);
 
