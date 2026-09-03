@@ -12,6 +12,7 @@ module com.simplerun {
     requires java.desktop;
     requires org.kordamp.bootstrapfx.core;
 
+
     opens com.rianascorp.main to javafx.fxml;
     opens com.rianascorp.utils to javafx.fxml;
     opens com.rianascorp.objects to  org.hibernate.orm.core;

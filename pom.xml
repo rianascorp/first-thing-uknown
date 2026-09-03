@@ -60,8 +60,14 @@
       <artifactId>hibernate-core</artifactId>
       <version>${hibernate.version}</version>
     </dependency>
-
-    <!-- Jakarta Dependencies -->
+    <!--
+        <dependency>
+          <groupId>org.jboss.logging</groupId>
+          <artifactId>jboss-logging</artifactId>
+          <version>3.5.0.Final</version>
+        </dependency>
+    -->
+        <!-- Jakarta Dependencies -->
     <dependency>
       <groupId>jakarta.persistence</groupId>
       <artifactId>jakarta.persistence-api</artifactId>
@@ -122,8 +128,6 @@
       <version>2.0.9</version>
     </dependency>
   </dependencies>
-
-
 
   <build>
     <plugins>
